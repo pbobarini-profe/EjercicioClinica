@@ -13,7 +13,7 @@ namespace Modelos
         public Medicamentos medicamento { get; set; }
         public decimal peso { get; set; }//graduacion del medicamento
         public DateTime fechaInicio { get; set; }
-        public string descripcion { get; set; }
+        public string descripcion { get; set; } //varchar(MAX)
         public TiposResultadosTratamientos resultado { get; set; }
     }
 }

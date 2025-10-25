@@ -10,7 +10,7 @@ namespace Modelos
     {
         public int id { get; set; }
         public Pacientes paciente { get; set; }
-        public string descripcion { get; set; }
+        public string descripcion { get; set; } //varchar(MAX)
         public DateTime fechaInicio { get; set; }
     }
 }

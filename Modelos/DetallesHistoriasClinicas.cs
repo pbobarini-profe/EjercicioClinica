@@ -13,5 +13,6 @@ namespace Modelos
         public HistoriasClinicas historiaClinica { get; set; }
         public Medicos medico { get; set; }
         public Eventos tipoEvento { get; set; }
+        public string descripcion { get; set; } //varchar(MAX)
     }
 }
