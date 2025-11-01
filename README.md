@@ -12,6 +12,8 @@ Siempre que esten desarrollando asegurense tener su rama seleccionada. Cualquier
 // Tablas
 
 -- Pacientes
+
+
 CREATE TABLE dbo.Pacientes (
     id               INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     dni              NVARCHAR(50) NULL,
@@ -23,6 +25,8 @@ CREATE TABLE dbo.Pacientes (
 );
 
 -- Medicos
+
+
 CREATE TABLE dbo.Medicos (
     id               INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     dni              NVARCHAR(50) NULL,
@@ -34,12 +38,16 @@ CREATE TABLE dbo.Medicos (
 );
 
 -- TipoEventos
+
+
 CREATE TABLE dbo.TipoEventos (
     id           INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     descripcion  NVARCHAR(200) NULL
 );
 
 -- Eventos
+
+
 CREATE TABLE dbo.Eventos (
     id           INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     descripcion  NVARCHAR(200) NULL,
@@ -49,6 +57,8 @@ CREATE TABLE dbo.Eventos (
 );
 
 -- Medicamentos
+
+
 CREATE TABLE dbo.Medicamentos (
     id           INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     descripcion  NVARCHAR(200) NULL,
@@ -57,6 +67,8 @@ CREATE TABLE dbo.Medicamentos (
         FOREIGN KEY (eventoId) REFERENCES dbo.Eventos(id)
 );
 -- HistoriasClinicas
+
+
 CREATE TABLE dbo.HistoriasClinicas (
     id           INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     pacienteId   INT NOT NULL,
@@ -67,6 +79,8 @@ CREATE TABLE dbo.HistoriasClinicas (
 );
 
 -- Turnos
+
+
 CREATE TABLE dbo.Turnos (
     id           INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     pacienteId   INT NOT NULL,
@@ -77,6 +91,8 @@ CREATE TABLE dbo.Turnos (
     CONSTRAINT FK_Turnos_Medicos   FOREIGN KEY (medicoId)   REFERENCES dbo.Medicos(id)
 );
 -- PagosTurnos
+
+
 CREATE TABLE dbo.PagosTurnos (
     id         INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     fechaPago  DATETIME2(7) NOT NULL,
@@ -86,11 +102,17 @@ CREATE TABLE dbo.PagosTurnos (
         FOREIGN KEY (turnoId) REFERENCES dbo.Turnos(id)
 );
 -- TiposResultadosTratamientos
+
+
 CREATE TABLE dbo.TiposResultadosTratamientos (
     id           INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     descripcion  NVARCHAR(200) NULL
 );
+
+
 -- DetallesHistoriasClinicas
+
+
 CREATE TABLE dbo.DetallesHistoriasClinicas (
     id                 INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     fecha              DATETIME2(7) NOT NULL,
@@ -104,6 +126,8 @@ CREATE TABLE dbo.DetallesHistoriasClinicas (
 );
 
 -- Tratamiento
+
+
 CREATE TABLE dbo.Tratamiento (
     id                       INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     detalleHistoriaClinicaId INT NOT NULL,
@@ -116,13 +140,17 @@ CREATE TABLE dbo.Tratamiento (
     CONSTRAINT FK_Tratamiento_Meds  FOREIGN KEY (medicamentoId)            REFERENCES dbo.Medicamentos(id),
     CONSTRAINT FK_Tratamiento_Tipos FOREIGN KEY (resultadoId)              REFERENCES dbo.TiposResultadosTratamientos(id)
 );
+
+
 -- Especializaciones
+
 CREATE TABLE dbo.Especializaciones (
     id           INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     descripcion  NVARCHAR(200) NULL
 );
 
 -- ActividadesClientes
+
 CREATE TABLE dbo.ActividadesClientes (
     id            INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     actividadId   INT NOT NULL,   -- HistoriasClinicas
@@ -132,7 +160,10 @@ CREATE TABLE dbo.ActividadesClientes (
     CONSTRAINT FK_ActCli_HistoriasClinicas FOREIGN KEY (actividadId) REFERENCES dbo.HistoriasClinicas(id),
     CONSTRAINT FK_ActCli_Pacientes         FOREIGN KEY (clienteId)   REFERENCES dbo.Pacientes(id)
 );
+
+
 -- EspecializacionesMedicos
+
 CREATE TABLE dbo.EspecializacionesMedicos (
     id                 INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     medicoId           INT NOT NULL,  -- Medicos
