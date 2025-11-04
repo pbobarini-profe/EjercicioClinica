@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DetallesHistoriasClinicas.cs" />
+    <Compile Include="DtoActividadesClientes.cs" />
+    <Compile Include="MDtoInforme.cs" />
     <Compile Include="Medicamentos.cs" />
     <Compile Include="TiposResultadosTratamientos.cs" />
     <Compile Include="TipoEventos.cs" />
