@@ -46,11 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PFormBase.cs">
+    <Compile Include="EjercicioClinicaDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EjercicioClinicaDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDetalleHistoriaClinica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PFormBase.Designer.cs">
-      <DependentUpon>PFormBase.cs</DependentUpon>
+    <Compile Include="FrmDetalleHistoriaClinica.Designer.cs">
+      <DependentUpon>FrmDetalleHistoriaClinica.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -60,8 +65,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="PFormBase.resx">
-      <DependentUpon>PFormBase.cs</DependentUpon>
+    <EmbeddedResource Include="FrmDetalleHistoriaClinica.resx">
+      <DependentUpon>FrmDetalleHistoriaClinica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -72,6 +80,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="EjercicioClinicaDataSet3.xsc">
+      <DependentUpon>EjercicioClinicaDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="EjercicioClinicaDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EjercicioClinicaDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EjercicioClinicaDataSet3.xss">
+      <DependentUpon>EjercicioClinicaDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\Modelos.HistoriasClinicas.datasource" />
+    <None Include="Properties\DataSources\Modelos.Medicos.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

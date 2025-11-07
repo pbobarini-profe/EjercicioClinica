@@ -16,7 +16,11 @@ namespace EjercicioClinica
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu());
+            // CAMBIA ESTA LÍNEA:
+            Application.Run(new FrmDetalleHistoriaClinica());
+
+            // Antes estaba: Application.Run(new Menu());
+            // Application.Run(new Menu());
         }
     }
 }
